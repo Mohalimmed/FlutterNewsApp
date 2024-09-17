@@ -51,7 +51,7 @@ class NewsCubit extends Cubit<NewsStates> {
     Dio_Helper.getData('v2/top-headlines', {
       'country': 'us',
       'category': 'business',
-      'apikey': 'f731a25de512436d84cb4b064607deab',
+      'apikey': '',
     }).then((value) {
       Business = value?.data['articles'];
       emit(NewsGetBusinessSuccessState());
@@ -71,7 +71,7 @@ class NewsCubit extends Cubit<NewsStates> {
       Dio_Helper.getData('v2/top-headlines', {
         'country': 'us',
         'category': 'sports',
-        'apikey': 'f731a25de512436d84cb4b064607deab',
+        'apikey': '',
       }).then((value) {
         Sports = value?.data['articles'];
         emit(NewsGetSportsSuccessState());
@@ -94,7 +94,7 @@ class NewsCubit extends Cubit<NewsStates> {
       Dio_Helper.getData('v2/top-headlines', {
         'country': 'us',
         'category': 'science',
-        'apikey': 'f731a25de512436d84cb4b064607deab',
+        'apikey': '',
       }).then((value) {
         Science = value?.data['articles'];
         emit(NewsGetScienceSuccessState());
@@ -120,7 +120,7 @@ List<dynamic>? search = [];
 
     Dio_Helper.getData('v2/everything', {
       'q': '$value',
-      'apikey': 'f731a25de512436d84cb4b064607deab',
+      'apikey': '',
     }).then((value) {
       search = value?.data['articles'];
       emit(NewsGetSearchSuccessState());
